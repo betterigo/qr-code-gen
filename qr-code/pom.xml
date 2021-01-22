@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.betterigo</groupId>
+  <artifactId>qr-code</artifactId>
+  <version>1.0.4</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>qr-code-autoconfigure</module>
+  	<module>qrcode-spring-boot-starter</module>
+  </modules>
+<!--   	<distributionManagement>
+		<snapshotRepository>
+			<id>localNexus</id>
+			<name>Nexus Snapshot</name>
+			<url>http://172.27.107.22:8081/repository/local-snapshot-repository/</url>
+		</snapshotRepository>
+		<site> <id>localNexus</id> <name>Nexus Sites</name> <url>dav:http://172.27.107.22:8081/repository/local-snapshot-repository/</url> 
+			</site>
+		<repository>
+			<id>localNexus</id>
+			<url>http://172.27.103.22:8081/repository/local-release/</url>
+		</repository>
+	</distributionManagement> -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>localNexus</id>
+			<name>Nexus Snapshot</name>
+			<url>http://172.24.105.14:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>localNexus</id>
+			<url>http://172.24.105.14:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<!-- <artifactId>maven-complier-plugin</artifactId> -->
+				<artifactId>maven-source-plugin</artifactId>
+				<!-- <version>3.2</version> -->
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

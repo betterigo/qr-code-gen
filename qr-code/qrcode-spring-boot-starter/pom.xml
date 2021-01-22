@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.github.betterigo</groupId>
+		<artifactId>qr-code</artifactId>
+		<version>1.0.4</version>
+	</parent>
+	<artifactId>qrcode-spring-boot-starter</artifactId>
+	<name>qrcode-spring-boot-starter</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>io.github.betterigo</groupId>
+			<artifactId>qr-code-autoconfigure</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+	</dependencies>
+
+<!-- 	<distributionManagement>
+		<snapshotRepository>
+			<id>localNexus</id>
+			<name>Nexus Snapshot</name>
+			<url>http://172.27.107.22:8081/repository/local-snapshot-repository/</url>
+		</snapshotRepository>
+		<site> <id>localNexus</id> <name>Nexus Sites</name> <url>dav:http://172.27.107.22:8081/repository/local-snapshot-repository/</url> 
+			</site>
+		<repository>
+			<id>localNexus</id>
+			<url>http://172.27.103.22:8081/repository/local-release/</url>
+		</repository>
+	</distributionManagement> -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>localNexus</id>
+			<name>Nexus Snapshot</name>
+			<url>http://172.24.105.14:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>localNexus</id>
+			<url>http://172.24.105.14:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
